@@ -39,25 +39,14 @@ class AdminController extends Controller
         return view('admin.checkin');
     }
 
-    public function checked(Request $request)
+    public function checked()
     {
-        $id = request('search');
-        dd($id);
-        $request()->validate([
-            'nama' => 'required',
-            'email' => 'required|email:dns',
-            'ktp' => 'required|min:16|max:16'
-        ]);
-
-        $tickets = Ticket::find($id);
-        dd($tickets);
-        $tickets->nama = $request->nama;
-        $tickets->ktp = $request->ktp;
-        $tickets->email = $request->email;
+        $id = request('id');
+        $tickets = Ticket::where('id', $id)->first();
         $tickets->checked = 'yes';
 
         $tickets->save();
 
-        return redirect('/admin/check');
+        return redirect('/admin/check?search=' . $id);
     }
 }

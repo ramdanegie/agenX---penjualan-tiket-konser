@@ -42,11 +42,10 @@
                         <td><strong>:</strong> {{ $tiket->checked === 'yes' ? 'Tidak Tersedia' : 'Tersedia' }}</td>
                     </tr>
                 </table>
-
-                <form action="/admin/checked" method="post">
+                <form action="/admin/checked?id={{ $tiket->id }}" method="post">
                     @csrf
                     <div class="d-flex justify-content-end">
-                        @method('PUT')
+                        {{-- @method('PUT') --}}
                         <button class="btn btn-primary btn-sm mt-3" type="submit"
                             {{ $tiket->checked === 'yes' ? 'disabled' : '' }}>Check
                             In</button>
