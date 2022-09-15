@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('admin/cek*') ? 'active' : '' }}" href="/admin/cek">
+                <a class="nav-link {{ Request::is('admin/check*') ? 'active' : '' }}" href="/admin/check">
                     <span data-feather="user-check" class="align-text-bottom"></span>
                     Cek Tiket
                 </a>

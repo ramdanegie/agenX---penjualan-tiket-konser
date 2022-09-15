@@ -6,7 +6,7 @@
             <h4>Lengkapi Data Diri Pemesan</h4>
         </div>
         <div class="row mt-3">
-            <form action="{{ route('tickets.store') }}" method="POST">
+            <form class="px-4" action="{{ route('tickets.store') }}" method="POST">
                 @csrf
                 {{-- <div class="form-floating mb-2">
                     <input type="hidden" class=" hidden form-control" id="tiket" placeholder="tiket">
@@ -24,8 +24,9 @@
                         placeholder="name@example.com">
                     <label for="floatingInput">Email address</label>
                 </div>
-
-                <button class="btn btn-primary" type="submit">Pesan</button>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary px-4 py-2 mt-2" type="submit">Pesan</button>
+                </div>
             </form>
         </div>
     </div>

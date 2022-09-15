@@ -56,7 +56,7 @@ class TicketController extends Controller
 
         $ticket->save();
 
-        return redirect()->route('tickets.index')->with('success', 'Tiket berhasil dipesan!');
+        return redirect()->route('tickets.show', $ticket->id)->with('success', 'Tiket berhasil dipesan!');
     }
 
     /**
@@ -67,7 +67,11 @@ class TicketController extends Controller
      */
     public function show(Ticket $ticket)
     {
-        return view('tickets.show', compact('ticket'));
+        return view('tickets.show', [
+            'ticket' => $ticket,
+            'active' => 'buy',
+            'title' => 'Detail Tiket'
+        ]);
     }
 
     /**
